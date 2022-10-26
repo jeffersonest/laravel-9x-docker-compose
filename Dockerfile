@@ -36,13 +36,3 @@ EXPOSE 8000
 
 USER $user
 
-RUN composer create-project laravel/laravel /var/www/html --remove-vcs
-
-COPY .env .
-
-RUN composer install
-
-RUN php artisan optimize:clear
-
-RUN php artisan key:generate
-
